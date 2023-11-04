@@ -1,0 +1,53 @@
+# Ignore system and IDE-generated files
+.vscode/
+.idea/
+
+# Ignore Python virtual environment
+venv/
+env/
+
+# Ignore compiled Python files
+__pycache__/
+
+# Ignore log and temporary files
+*.log
+*.tmp
+
+# Ignore project-specific files and directories
+__init__.py
+config.py
+
+#Ignore JSON containing API Key
+daring-spirit-404120-e0243e440d8a.json
+
+# Ignore user-specific files
+config.yaml
+
+# Ignore data and model files (adjust this as needed)
+data/
+models/
+
+# Ignore generated result files (adjust this as needed)
+results/
+
+# Ignore API keys and sensitive information (be cautious with this)
+secrets.json
+
+# Ignore backup and hidden files
+*.bak
+.*.swp
+
+# Ignore project-specific settings (e.g., database settings)
+settings.py
+
+# Ignore virtual environment files
+.pipenv
+Pipfile.lock
+
+# Ignore project-specific documentation
+docs/
+
+# Ignore local development files
+.DS_Store
+
+# Ignore any other files or directories that should not be committed
