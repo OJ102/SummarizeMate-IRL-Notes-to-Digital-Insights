@@ -79,24 +79,12 @@ def summarize_text(text):
         return error_message
 
     # Print the summarized text
-    print('Summary:', response.summary)
+    return response.summary
 
-if __name__ == '__main':
-    # Initialize the Vision client
-    service_account_key_path = 'daring-spirit-404120-e0243e440d8a.json'
-    vision_client = initialize_vision_client(service_account_key_path)
 
-    local = "MY CHOICE"  # WRITE CODE TO IMPLEMENT CHOICE
-    if local == "NO":  # PLZ REPLACE THE NO
-        uri = "https://marcellapurnama.files.wordpress.com/2011/10/scan-4.jpg"  # REPLACE DUMMY URI
-        pre_processed_text = detect_text_uri(uri, vision_client)
-    else:
-        path = "DUMMY PATH"
-        pre_processed_text = detect_text_local(path, vision_client)
-
-    # Output read file
-    print(pre_processed_text)
-    print(type(pre_processed_text))
+# Initialize the Vision client
+service_account_key_path = 'daring-spirit-404120-e0243e440d8a.json'
+vision_client = initialize_vision_client(service_account_key_path)
 
 content = ""
 inputText = "URI"
@@ -137,10 +125,10 @@ def process_upload(state):
 def on_button_action(state):
     if (state.inputText == "URI"):
         filePath = process_upload(state)
-        state.ScannedText = detect_text_local(filePath)
+        state.ScannedText = detect_text_local(filePath, vision_client)
         state.SummarizedText = summarize_text(state.ScannedText)
     else:
-        state.ScannedText = detect_text_uri(state.inputText)
+        state.ScannedText = detect_text_uri(state.inputText, vision_client)
         state.SummarizedText = summarize_text(state.ScannedText)
 
 def on_change(state, var_name, var_value):
