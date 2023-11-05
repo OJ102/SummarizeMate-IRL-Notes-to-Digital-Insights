@@ -24,7 +24,7 @@ def detect_text_local(path, client):
     for text in texts:
         if i == 1:
             break
-        print(f'\n"{text.description}"')
+        #print(f'\n"{text.description}"')
         result = text.description
         return result
         i += 1
@@ -49,7 +49,7 @@ def detect_text_uri(uri, client):
     for text in texts:
         if i == 1:
             break
-        print(f'\n"{text.description}"')
+        #print(f'\n"{text.description}"')
         result = text.description
         return result
         i += 1
