@@ -19,6 +19,7 @@ config.py
 
 #Ignore JSON containing API Key
 daring-spirit-404120-e0243e440d8a.json
+keys.py
 
 # Ignore user-specific files
 config.yaml

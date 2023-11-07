@@ -2,6 +2,7 @@ import cohere
 from google.cloud import vision
 from google.oauth2 import service_account
 from taipy.gui import Gui, notify
+import keys
 
 def initialize_vision_client(service_account_key_path):
     """Initialize the Vision client."""
@@ -62,7 +63,7 @@ def detect_text_uri(uri, client):
 
 def summarize_text(text):
     # Initialize the Cohere client with your API key
-    co = cohere.Client('MB5Tg4Xti81PqzLjKC24GqCn2IAocX3NRLLVi7TE')  # This is your trial API key
+    co = cohere.Client(keys.cohere_key)  # This is your trial API key
 
     try:
         response = co.summarize(
